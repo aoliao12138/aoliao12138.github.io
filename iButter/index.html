@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="iButter: Neural Interactive Bullet Time Generator for Human
+          Free-viewpoint Rendering">
+    <meta name="author" content="Liao Wang,
+                                Ziyu Wang,
+                                Pei Lin,
+                                Yuheng Jiang,
+                                Xin Suo,
+                                Minye Wu,
+                                Lan Xu,
+                                Jingyi Yu">
+
+    <title>iButter: Neural Interactive Bullet Time Generator for Human Free-viewpoint Rendering</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>iButter: Neural Interactive Bullet Time Generator for <br> Human Free-viewpoint Rendering</h2>
+        <h3>ACM MM 2021</h3>
+           <p class="abstract"></p>
+    <hr>
+    <p class="authors">
+        <a href="https://wanglastu.github.io/"> Liao Wang</a>,
+        <a > Ziyu Wang</a>,
+        <a > Lin Pei</a>,
+        <a > Yuheng Jiang</a>,
+        <a > Xin Suo</a>,
+        <a href="https://wuminye.com/"> Minye Wu</a> </br>
+        <a href="https://www.xu-lan.com/index.html"> Lan Xu</a>,
+        <a href="https://sist.shanghaitech.edu.cn/2020/0707/c7499a53862/page.htm"> Jingyi Yu</a>
+    </p>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2108.05577">Paper</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="vcontainer">
+            <iframe class='video' src="https://www.youtube.com/embed/biGcDOHm5rw" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/biGcDOHm5rw" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!-- <iframe class='video' src="https://www.youtube.com/embed/3M3edNiaGsA" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> -->
+        </div>
+        <hr>
+        <p>
+            Generating ``bullet-time'' effects of human free-viewpoint videos is critical for immersive visual effects and VR/AR experience. Recent neural advances still lack the controllable and interactive bullet-time design ability for human free-viewpoint rendering, especially under the real-time, dynamic and general setting for our trajectory-aware task. To fill this gap, in this paper we propose a neural interactive bullet-time generator (iButter) for photo-realistic human free-viewpoint rendering from dense RGB streams, which enables flexible and interactive design for human bullet-time visual effects. Our iButter approach consists of a real-time preview and design stage as well as a trajectory-aware refinement stage. During preview, we propose an interactive bullet-time design approach by extending the NeRF rendering to a real-time and dynamic setting and getting rid of the tedious per-scene training. To this end, our bullet-time design stage utilizes a hybrid training set, light-weight network design and an efficient silhouette-based sampling strategy. During refinement, we introduce an efficient trajectory-aware scheme within 20 minutes, which jointly encodes the spatial, temporal consistency and semantic cues along the designed trajectory, achieving photo-realistic bullet-time viewing experience of human activities. Extensive experiments demonstrate the effectiveness of our approach for convenient interactive bullet-time design and photo-realistic human free-viewpoint video generation.        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>System Architechture</h2>
+        <hr>
+        <p>
+            Our neural interactive bullet-time generator (iButter) enables convenient, flexible and interactive design for human
+            bullet-time visual effects from dense RGB streams, and achieves high-quality and photo-realistic human performance rendering along the designed trajectory.        </p>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/teaser.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+        </div> 
+    </div>
+
+    <div class="section">
+        <h2>Pipeline</h2>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col justify-content-center text-center">
+                <img src="img/network.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+        </div>
+        <p>
+           Our high quality rendering network enables realistic rendering without per-scene training. The whole architecture can be divided
+           into three parts: feature extraction, view interpolating, and volume rendering.
+        </p>
+        <div class="row align-items-center"></div>
+        <div class="col justify-content-center text-center">
+            <img src="img/refinement_pipeline.png" style="width:100%; margin-right:-10px; margin-top:10px;">
+
+        <p>
+            Our trajectory-aware refinement scheme applies both spatial consistency loss and temporal consistency loss
+        to improve rendering quality.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Results</h2>
+        <hr>
+        <div class="row align-items-center"></div>
+        <div class="col justify-content-center text-center">
+            <img src="img/gallery.jpg" style="width:100%; margin-right:-10px; margin-top:10px;">
+        </div>
+
+        <p>
+            Several examples that demonstrate the quality and fidelity of the render results (right) from the trajectory user
+            designed (left) from our system on the data we captured, including human portrait, human with objects and multi humans.
+        </p>
+
+       
+    </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            @misc{wang2021ibutter,
+                title={iButter: Neural Interactive Bullet Time Generator for Human Free-viewpoint Rendering}, 
+                author={Liao Wang and Ziyu Wang and Pei Lin and Yuheng Jiang and Xin Suo and Minye Wu 
+                    and Lan Xu and Jingyi Yu},
+                year={2021},
+                eprint={2108.05577},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV}
+          }
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+    <p>This website template is adapted from <a href="https://apchenstu.github.io/mvsnerf/">MVSNeRF</a></p>
+    </footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
