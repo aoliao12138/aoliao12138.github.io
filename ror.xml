@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://aoliao12138.github.io/</title>
+  <link>https://aoliao12138.github.io/</link>
+
+<item>
+     <link>https://aoliao12138.github.io/</link>
+     <title>Liao Wang's Homepage - Shanghaitech University</title>
+     <description>Liao Wang's Homepage - Shanghaitech University</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aoliao12138.github.io/files/CV/cv.pdf</link>
+     <title></title>
+     
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aoliao12138.github.io/FPO/</link>
+     <title>Fourier PlenOctrees for Dynamic Radiance Field Rendering in Real-time</title>
+     <description>Fourier PlenOctrees for Dynamic Radiance Field Rendering in Real-time</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aoliao12138.github.io/iButter/</link>
+     <title>iButter: Neural Interactive Bullet Time Generator for Human Free-viewpoint Rendering</title>
+     <description>iButter: Neural Interactive Bullet Time Generator for Human
+          Free-viewpoint Rendering</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aoliao12138.github.io/files/Paper/NeRFAA/NeRFAA_finalproj.pdf</link>
+     <title></title>
+     
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
