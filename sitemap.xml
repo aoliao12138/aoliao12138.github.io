@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://aoliao12138.github.io/</loc>
+  <lastmod>2022-02-25T07:11:25+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://aoliao12138.github.io/files/CV/cv.pdf</loc>
+  <lastmod>2022-02-25T07:11:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aoliao12138.github.io/FPO/</loc>
+  <lastmod>2022-02-25T07:11:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aoliao12138.github.io/iButter/</loc>
+  <lastmod>2022-02-25T07:11:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aoliao12138.github.io/files/Paper/NeRFAA/NeRFAA_finalproj.pdf</loc>
+  <lastmod>2022-02-25T07:11:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
