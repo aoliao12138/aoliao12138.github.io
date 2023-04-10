@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Neural Residual Radiance Fields for Streamably Free-Viewpoint Videos">
+    <meta name="author" content="Liao Wang,
+                                Qiang Hu,
+                                Qihan He,
+                                Ziyu Wang,
+                                Jingyi Yu,
+                                Tinne Tuytelaars,
+                                Lan Xu,
+                                Minye Wu">
+
+    <title>Neural Residual Radiance Fields for Streamably Free-Viewpoint Videos</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Neural Residual Radiance Fields for Streamably Free-Viewpoint Videos</h2>
+    <h3>CVPR 2023</h3>
+           <p class="abstract"></p>
+    <hr>
+    <p class="authors">
+        <a href="https://aoliao12138.github.io/"> Liao Wang</a>,
+        <a href="https://sist.shanghaitech.edu.cn/2020/0706/c7494a53788/page.htm"> Qiang Hu</a>,
+        <a href="https://www.linkedin.com/in/qihan-he-a378a61b7/"> Qihan He</a>,
+        <a > Ziyu Wang</a>,
+        <a href="https://sist.shanghaitech.edu.cn/2020/0707/c7499a53862/page.htm"> Jingyi Yu</a>,
+        <a href="https://homes.esat.kuleuven.be/~tuytelaa/"> Tinne Tuytelaars</a> </br>
+        <a href="https://www.xu-lan.com/index.html"> Lan Xu&dagger;</a>,
+        <a href="https://wuminye.com/"> Minye Wu&dagger;</a>  
+    </p>
+    <div class="nerf_equal_v2">(&dagger; corresponding authors)</div>
+</br>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="files/Paper/ReRF/ReRF.pdf">Paper</a>
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2202.08614">Arxiv</a>
+        <a class="btn btn-primary" href="https://github.com/aoliao12138/ReRF">Code (coming soon)</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="vcontainer">
+            <iframe class='video' src="https://www.youtube.com/embed/dFvwaI1h-nc"  title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <hr>
+        <p>
+            The success of the Neural Radiance Fields (NeRFs) for modeling and free-view rendering static objects has inspired numerous attempts on dynamic scenes. Current techniques that utilize neural rendering for facilitating free-view videos (FVVs) are restricted to either offline rendering or are capable of processing only brief sequences with minimal motion. In this paper, we present a novel technique, Residual Radiance Field or ReRF, as a highly compact neural representation to achieve real-time FVV rendering on long-duration dynamic scenes. ReRF explicitly models the residual information between adjacent timestamps in the spatial-temporal feature space, with a global coordinate-based tiny MLP as the feature decoder. Specifically, ReRF employs a compact motion grid along with a residual feature grid to exploit inter-frame feature similarities. We show such a strategy can handle large motions without sacrificing quality. We further present a sequential training scheme to maintain the smoothness and the sparsity of the motion/residual grids. Based on ReRF, we design a special FVV codec that achieves three orders of magnitudes compression rate and provides a companion ReRF player to support online streaming of long-duration FVVs of dynamic scenes. Extensive experiments demonstrate the effectiveness of ReRF for compactly representing dynamic radiance fields, enabling an unprecedented free-viewpoint viewing experience in speed and quality.
+        <div class="section">
+            <h2>Pipeline</h2>
+            <hr>
+                        <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/fig2-new.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div> 
+            <hr>
+            <p>
+                llustration of our Neural Residual Radiance Field (ReRF). First, we estimate a dense motion field Dt. Next, we generate a
+                compact motion grid Mt through motion pooling. Finally, we warp ft−1 to a base grid ˆft and learn our residual grid rt to increase feature
+                sparsity and promote compression.            </p>
+        </div>
+        </div>
+
+        <div class="section">
+            <h2>Results</h2>
+            <hr>
+            
+                <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/gallery.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div>
+            <hr>
+            <p>
+                The rendered appearance results of our ReRF method on long sequences with large motions. The last row shows
+                that we can enable variable bitrate.
+            </p>
+            </div>
+            </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="row align-items-center"></div>
+        <div class="col">
+        <div class="bibtexsection">
+            @InProceedings{Wang_2022_CVPR,
+                author    = {Wang, Liao and Zhang, Jiakai and Liu, Xinhang and Zhao, Fuqiang and <br>                    Zhang, Yanshun and Zhang, Yingliang and Wu, Minye and Yu, Jingyi and Xu, Lan},
+                title     = {Fourier PlenOctrees for Dynamic Radiance Field Rendering in Real-Time},
+                booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and       <br>                    Pattern Recognition (CVPR)},
+                month     = {June},
+                year      = {2022},
+                pages     = {13524-13534}
+            }
+        </div>
+    </div>
+    </div>
+
+    <hr>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
