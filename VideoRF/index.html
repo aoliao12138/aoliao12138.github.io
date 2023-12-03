@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="VideoRF: Rendering Dynamic Radiance Fields as 2D Feature Video Streams">
+    <meta name="author" content="Liao Wang,
+                                Kaixin Yao,
+                                Chengcheng Guo,
+                                Zhirui Zhang,
+                                Jingyi Yu,
+                                Lan Xu,
+                                Minye Wu">
+
+    <title>VideoRF: Rendering Dynamic Radiance Fields as 2D Feature Video Streams</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>VideoRF: Rendering Dynamic Radiance Fields as 2D Feature Video Streams</h2>
+    <!-- <h3>Arxiv</h3> -->
+           <p class="abstract"></p>
+    <hr>
+    <p class="authors">
+        <a href="https://aoliao12138.github.io/"> Liao Wang*</a>,
+        <a href="https://yaokxx.github.io/"> Kaixin Yao*</a>,
+        <a > Chengcheng Guo</a>,
+        <a > Zhirui Zhang</a>,
+        <a href="https://qianghu-huber.github.io/qianghuhomepage/"> Qiang Hu</a>,
+        <a href="https://sist.shanghaitech.edu.cn/2020/0707/c7499a53862/page.htm"> Jingyi Yu</a> </br>
+        <a href="https://www.xu-lan.com/index.html"> Lan Xu&dagger;</a>,
+        <a href="https://wuminye.com/"> Minye Wu&dagger;</a>  
+    </p>
+</br>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="../files/Paper/VideoRF/videoRF.pdf">Paper</a>
+        <a class="btn btn-primary" href="">Arxiv</a>
+        <a class="btn btn-primary" href="https://github.com/aoliao12138/VideoRF">Code (Coming Soon)</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="vcontainer">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/g4ksud1mhws?si=665jrudAP0Qdr0ZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class='video' src="https://www.youtube.com/embed/g4ksud1mhws?si=665jrudAP0Qdr0ZI"  title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <hr>
+        <p>
+
+            Neural Radiance Fields (NeRFs) excel in photorealistically rendering static scenes. However, rendering dynamic,
+            long-duration radiance fields on ubiquitous devices remains
+            challenging, due to data storage and computational constraints. In this paper, we introduce VideoRF, the first approach to enable real-time streaming and rendering of dynamic radiance fields on mobile platforms. At the core is
+            a serialized 2D feature image stream representing the 4D
+            radiance field all in one. We introduce a tailored training scheme directly applied to this 2D domain to impose
+            the temporal and spatial redundancy of the feature image
+            stream. By leveraging the redundancy, we show that the feature image stream can be efficiently compressed by 2D video
+            codecs, which allows us to exploit video hardware accelerators to achieve real-time decoding. On the other hand,
+            based on the feature image stream, we propose a novel rendering pipeline for VideoRF, which has specialized space
+            mappings to query radiance properties efficiently. Paired
+            with a deferred shading model, VideoRF has the capability of real-time rendering on mobile devices thanks to its efficiency. We have developed a real-time interactive player
+            that enables online streaming and rendering of dynamic
+            scenes, offering a seamless and immersive free-viewpoint experience across a range of devices, from desktops to mobile phones.
+        </p>
+        <div class="section">
+            <h2>Overview</h2>
+            <hr>
+                        <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/teaser.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div> 
+            <hr>
+            <p>
+                Our proposed VideoRF views dynamic radiance field as 2D feature video streams combined with deferred rendering. This
+                technique facilitates hardware video codec and shader-based rendering, enabling smooth high-quality rendering across diverse devices.           </p>
+        </div>
+        </div>
+
+        <div class="section">
+            <h2>VideoRF Rrepresentation</h2>
+            <hr>
+                        <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/videorf.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div> 
+            <hr>
+            <p>
+                Demonstration of VideoRF representation. For each 3D sample
+                point, its density σ and feature <b>f</b> are fetched from the 2D feature
+                image through the mapping table <b>M</b>. Each point feature is first
+                volumetrically accumulated to get the ray feature  ̃<b>f</b> and pass MLP
+                Φ to decode the ray color.           </p>
+        </div>
+        </div>
+        
+        <div class="section">
+            <h2>Training Pipeline</h2>
+            <hr>
+            
+                <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/5.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div>
+            <hr>
+            <p>
+                Overview of our video codec-friendly training. First, we apply our grid-based coarse training to generate per-frame
+                occupancy grid <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mi mathvariant="bold"><b>O</b></mi>
+                    <msup>
+                      <mi></mi>
+                      <mi>t</mi>
+                    </msup>
+                  </math>. Then, during baking, we adaptively group each frame and create a mapping table <b>M</b> for each group. Next, we
+                sequentially train each feature image
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                      <mi mathvariant="bold"><b>I</b></mi>
+                      <msup>
+                        <mi></mi>
+                        <mi>t</mi>
+                      </msup>
+                  </math>
+                   through our spatial, temporal and photometric loss. Finally, feature images are compressed into
+                the feature video streaming to the player.
+            </p>
+            </div>
+            </div>
+        
+            <div class="section">
+                <h2>Mapping Table Generation</h2>
+                <hr>
+                            <div class="row align-items-center">
+                    <div class="col justify-content-center text-center">
+                        <img src="img/mapping.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+                </div> 
+                <hr>
+                <p>
+                    Illustration of our mapping table generation. We first
+                    perform 3D Morton sorting on each nonempty vertice and
+                    group it into chunks C<sub>i</sub>. Next, we lay out each chunk into
+                    each block B<sub>i</sub> of the feature image, arranged in 2D Morton order
+                     within it.        </p>
+            </div>
+
+        <div class="section">
+            <h2>Results</h2>
+            <hr>
+            
+                <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img src="img/gallery.png" style="width:100%; margin-right:-10px; margin-top:-10px;">
+            </div>
+            <hr>
+            <p>
+                Our VideoRF method generates results for inward-facing, 360◦ video sequences featuring human-object interactions with large
+                motion. The images in the last row illustrate our ability to implement variable bitrate in these sequences.
+            </p>
+            </div>
+            </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="row align-items-center"></div>
+        <div class="col">
+        <div class="bibtexsection">
+
+        </div>
+    </div>
+    </div>
+
+    <hr>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
